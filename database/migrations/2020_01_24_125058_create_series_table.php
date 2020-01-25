@@ -21,14 +21,17 @@ class CreateSeriesTable extends Migration
             $table->integer('ano')->unsigned();
             $table->integer('avaliacao_geral')->unsigned();
             $table->boolean('premiada');
+            /* se a relação fosse one to many 
             $table->unsignedBigInteger('user_id')->nullable();
+            */
             $table->timestamps();
         });
 
-        //Foreign Keys
+        /*Foreign Keys - se fosse relação one to many
         Schema::table('series', function (Blueprint $table) { 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
+        */
     }
 
     /**

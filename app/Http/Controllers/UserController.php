@@ -7,7 +7,7 @@ use App\User;
 
 class UserController extends Controller
 {
-    //MÉTODOS CRUD
+    //MÉTODOS CRUD - OBJETO: USUÁRIO
 
 
 	//create
