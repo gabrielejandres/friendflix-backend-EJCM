@@ -17,7 +17,11 @@ class UserController extends Controller
 
     	$user->name = $request->name;
     	$user->email = $request->email;
+    	$user->username = $request->username;
     	$user->password = $request->password;
+    	$user->following = $request->following;
+    	$user->followers = $request->followers;
+    	$user->number_of_posts = $request->number_of_posts;
     	$user->save(); //salva os dados
 
     	return response()->json([$user]); //retorna o que inserimos
@@ -47,15 +51,25 @@ class UserController extends Controller
     		if($request->name){
     			$user->name = $request->name;
     		}
-    		else if($request->email){
+    		if($request->email){
     			$user->email = $request_email;
     		}
-    		else if($request->password){
+    		if($request->username){
+    			$user->username = $request->username;
+    		}
+    		if($request->password){
     			$user->password = $request->password;
     		}
-    		else{
-    			return response()->json(['Insira o parâmetro a ser atualizado']);
+    		if($request->following){
+    			$user->following = $request->following;
     		}
+    		if($request->followers){
+    			$user->followers = $request->followers;
+    		}
+    		if($request->number_of_posts){
+    			$user->number_of_posts = $request->number_of_posts;
+    		}
+    		
     		$user->save();
     		return response()->json([$user]);
     	}

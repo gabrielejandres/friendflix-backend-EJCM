@@ -17,8 +17,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//rotas do User
 Route::get('listaUsers', 'UserController@listUser');
 Route::get('mostraUser/{id}', 'UserController@showUser');
 Route::post('criaUser', 'UserController@createUser');
 Route::put('atualizaUser/{id}', 'UserController@updateUser');
 Route::delete('deletaUser/{id}', 'UserController@deleteUser');
+
+
+//rotas do Post
+Route::get('listaPosts', 'PostController@listPost');
+Route::get('mostraPost/{id}', 'PostController@showPost');
+Route::post('criaPost', 'PostController@createPost');
+Route::put('atualizaPost/{id}', 'PostController@updatePost');
+Route::delete('deletaPost/{id}', 'PostController@deletePost');
