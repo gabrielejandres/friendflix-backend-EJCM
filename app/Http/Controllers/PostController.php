@@ -54,7 +54,6 @@ class PostController extends Controller
     			$post->data = $request->data;
     		}
     		if($request->attachment){
-    			echo "oi";
     			$post->attachment = $request->attachment;
     		}
     		if($request->user_id){
