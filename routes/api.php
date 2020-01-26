@@ -30,4 +30,6 @@ Route::get('listaPosts', 'PostController@listPost');
 Route::get('mostraPost/{id}', 'PostController@showPost');
 Route::post('criaPost', 'PostController@createPost');
 Route::put('atualizaPost/{id}', 'PostController@updatePost');
+Route::put('insereRelacao/{id}', 'PostController@insertRelationship');
+Route::put('deletaRelacao/{id}', 'PostController@deleteRelationship');
 Route::delete('deletaPost/{id}', 'PostController@deletePost');

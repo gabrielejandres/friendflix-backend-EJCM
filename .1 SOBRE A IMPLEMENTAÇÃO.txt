@@ -1,0 +1,3 @@
+Relação one to many escolhida: Usuários X Posts
+
+* a implementação da relação entre usuários e séries não está completa porque começamos a desenvolver na aula, no entanto, por não ser uma relação one to many em minha modelagem, escolhi trabalhar com outra relação.

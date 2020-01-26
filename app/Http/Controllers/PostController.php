@@ -54,6 +54,7 @@ class PostController extends Controller
     			$post->data = $request->data;
     		}
     		if($request->attachment){
+    			echo "oi";
     			$post->attachment = $request->attachment;
     		}
     		if($request->user_id){
@@ -74,4 +75,35 @@ class PostController extends Controller
     	return response()->json(['Post deletado']); 
 
     }
+
+    //inserir o atributo da relação entre usuários e posts de uma instância específica
+    public function insertRelationship(Request $request, $id){
+
+    	$post = Post::find($id);
+
+    	if($post){ 
+    		$post->user_id = $request->user_id;
+    		$post->save();
+    		return response()->json([$post]);
+    	}
+    	else{
+    		return response()->json(['Esse post não existe. Por favor, entre com um valor válido para o id do post.']);
+    	}
+    }
+
+    //deletar a relação entre usuários e posts de uma instância específica
+    public function deleteRelationship(Request $request, $id){
+
+    	$post = Post::find($id);
+
+    	if($post){ 
+			$post->user_id = NULL;
+    		$post->save();
+    		return response()->json([$post]);
+    	}
+    	else{
+    		return response()->json(['Esse post não existe. Por favor, entre com um valor válido para o id do post.']);
+    	}
+    }
+
 }
